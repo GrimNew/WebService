@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.time.DateTimeException" %>
 <link rel="stylesheet" href="css/infostyle.css">
 <html>
 <head>
@@ -14,7 +15,7 @@
 
     <%!
         private static final String url=
-                "jdbc:mysql://localhost:3306/databaseutil" +    //JDBC方式/MySQL数据库/本机/端口3306/数据库名称
+                "jdbc:mysql://localhost:3306/monitor" +    //JDBC方式/MySQL数据库/本机/端口3306/数据库名称
                         "?useSSL=false&useUnicode=true&characterEncoding=utf8"; //SSL关闭/使用Unicode编码/编码方式utf-8
         private static final String dbuser="root";
         private static final String dbpassword="root";
@@ -40,10 +41,10 @@
     ResultSet resultSet = null;
     try {
         statement = connection.createStatement();
-        resultSet = statement.executeQuery("SELECT * FROM 数据信息表");
+        resultSet = statement.executeQuery("SELECT * FROM data_table");
         while (resultSet.next()){
             out.println("设备编号："+ resultSet.getString(1)+"\t数字量："+ resultSet.getString(2)+
-                            "\t，模拟量："+ resultSet.getString(3)+"\t，采集时间："+ resultSet.getTimestamp(4)+"<br>");
+                            "\t，模拟量："+ resultSet.getString(3)+"\t，采集时间："+ (resultSet.getTimestamp(4))+"<br>");
         }
     } catch (SQLException e) {
         e.printStackTrace();

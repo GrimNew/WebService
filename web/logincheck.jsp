@@ -21,7 +21,7 @@
 
 <%!
     private static final String url=
-            "jdbc:mysql://localhost:3306/databaseutil" +    //JDBC方式/MySQL数据库/本机/端口3306/数据库名称
+            "jdbc:mysql://localhost:3306/monitor" +    //JDBC方式/MySQL数据库/本机/端口3306/数据库名称
                     "?useSSL=false&useUnicode=true&characterEncoding=utf8"; //SSL关闭/使用Unicode编码/编码方式utf-8
     private static final String dbuser="root";
     private static final String dbpassword="root";
@@ -48,7 +48,7 @@
     ResultSet resultSet = null;
     try {
         statement = connection.createStatement();//对象实例化
-        resultSet = statement.executeQuery("SELECT * FROM 用户表 WHERE 账号=\'"+username+"\' AND 密码=\'"+password+"\'");//对象实例化，完成SQL语句执行
+        resultSet = statement.executeQuery("SELECT * FROM user_table WHERE username=\'"+username+"\' AND password=\'"+password+"\'");//对象实例化，完成SQL语句执行
         if (resultSet.next()){//next()方法返回数据库返回值
             loggedIn=true;
         }
