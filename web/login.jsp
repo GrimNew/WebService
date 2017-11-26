@@ -5,7 +5,7 @@
   Time: 16:00
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <link rel="stylesheet" href="css/mystyle.css">
 <head>
@@ -17,8 +17,12 @@
 %>
 <h1>现场监控设备传输服务系统</h1>
 <form action="logincheck.jsp" method="post">
-    账号: <input type="text" name="username"><br/>
-    密码: <input type="password" name="password"><br/><br/>
+    账号: <label>
+    <input type="text" name="username">
+</label><br/>
+    密码: <label>
+    <input type="password" name="password">
+</label><br/><br/>
     <input type="submit" value="登录" />
 </form>
 <%
