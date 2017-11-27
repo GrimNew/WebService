@@ -23,6 +23,7 @@
 
 </head>
 <body>
+<%=session.getAttribute("username") %>
 <%
     try {
         Class.forName("com.mysql.jdbc.Driver");   //反射加载驱动

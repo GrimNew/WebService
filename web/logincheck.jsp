@@ -40,9 +40,7 @@
     } catch (ClassNotFoundException | SQLException e) {
         e.printStackTrace();
     }
-%>
 
-<%
     //创建对象
     Statement statement = null;
     ResultSet resultSet = null;
@@ -55,9 +53,7 @@
     } catch (SQLException e) {
         e.printStackTrace();
     }
-%>
 
-<%
     //关闭相关资源
     try {
         if (resultSet != null) {
@@ -71,17 +67,11 @@
         e.printStackTrace();
     }
 
-%>
-
-<%
     if(loggedIn){
-%>
-<jsp:forward page="info.jsp" />;
-<%
+        request.getSession().setAttribute("username", username);
+        response.sendRedirect("info.jsp");
     }else{
-%>
-<jsp:forward page="logerror.jsp" />;
-<%
+        response.sendRedirect("loginerror.jsp");
     }
 %>
 </body>
