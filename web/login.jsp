@@ -12,9 +12,7 @@
     <title>现场监控设备传输服务系统 - 登录</title>
 </head>
 <body>
-<%
-    String alarm=request.getParameter("alarm");
-%>
+
 <h1>现场监控设备传输服务系统</h1>
 <form action="logincheck.jsp" method="post">
     账号: <label>
@@ -25,11 +23,6 @@
 </label><br/><br/>
     <input type="submit" value="登录" />
 </form>
-<%
-    if (alarm ==null){
-        out.println("<p>Your ID or PassWord Wrong!Please Relogin!<p>");
-    }
-%>
 
 </body>
 </html>

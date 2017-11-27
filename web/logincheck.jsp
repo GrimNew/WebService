@@ -75,14 +75,12 @@
 
 <%
     if(loggedIn){
-        out.println("登录成功！");
 %>
 <jsp:forward page="info.jsp" />;
 <%
     }else{
-        out.println("账号或密码错误！请重新登录！");
 %>
-<jsp:forward page="login.jsp?alarm=1" />;
+<jsp:forward page="logerror.jsp" />;
 <%
     }
 %>
