@@ -7,11 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.sql.*" %>
-<link rel="stylesheet" href="css/infostyle.css">
+
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/theme.css" type="text/css">
     <title>现场监控设备传输服务系统 - 信息查看</title>
-
     <%!
         private static final String url=
                 "jdbc:mysql://localhost:3306/monitor" +    //JDBC方式/MySQL数据库/本机/端口3306/数据库名称
@@ -20,10 +23,8 @@
         private static final String dbpassword="root";
         private Connection connection;
     %>
-
 </head>
-<body>
-<%=session.getAttribute("username") %>
+<body class="">
 <%
     try {
         Class.forName("com.mysql.jdbc.Driver");   //反射加载驱动
@@ -35,21 +36,53 @@
         e.printStackTrace();
     }
 %>
-
-<%
-    Statement statement = null;
-    ResultSet resultSet = null;
-    try {
-        statement = connection.createStatement();
-        resultSet = statement.executeQuery("SELECT * FROM data_table");
-        while (resultSet.next()){
-            out.println("设备编号："+ resultSet.getString(1)+"\t数字量："+ resultSet.getString(2)+
-                            "\t，模拟量："+ resultSet.getString(3)+"\t，采集时间："+ (resultSet.getTimestamp(4))+"<br>");
-        }
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-%>
+<div class="border border-light h-100 py-5 opaque-overlay" style="background-image: url(image/backgroundImage.jpg);">
+    <div class="container"><div class="row"><div class="col-md-12"><div class="row"><div class="col-md-12"><div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 opaque-overlay"><h1 class="text-center text-light">现场设备信息表</h1></div>
+        <div class="col-md-2"></div>
+    </div></div></div><div class="row"><div class="col-md-12"><div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 text-light opaque-overlay"><table class="table text-light">
+            <%
+                Statement statement = null;
+                ResultSet resultSet = null;
+                try {
+                    statement = connection.createStatement();
+                    resultSet = statement.executeQuery("SELECT * FROM data_table");
+            %>
+            <thead>
+            <tr class="text-light">
+                <th>设备编号</th>
+                <th>数字量</th>
+                <th>模拟量</th>
+                <th>采集时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+                    while (resultSet.next()){
+            %>
+            <tr>
+                <td><%=resultSet.getString(1)%></td>
+                <td><%=resultSet.getString(2)%></td>
+                <td><%=resultSet.getString(3)%></td>
+                <td><%=resultSet.getTimestamp(4)%></td>
+            </tr>
+            <%
+                    }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            %>
+            </tbody>
+        </table></div>
+        <div class="col-md-2"></div>
+    </div></div></div></div></div></div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 <%
     try {
@@ -64,6 +97,5 @@
         e.printStackTrace();
     }
 %>
-
 </body>
 </html>
