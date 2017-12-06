@@ -37,13 +37,13 @@
     }
 %>
 <div class="border border-light h-100 py-5 opaque-overlay" style="background-image: url(image/backgroundImage.jpg);">
-    <div class="container"><div class="row"><div class="col-md-12"><div class="row"><div class="col-md-12"><div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 opaque-overlay"><h1 class="text-center text-light">现场设备信息表</h1></div>
-        <div class="col-md-2"></div>
-    </div></div></div><div class="row"><div class="col-md-12"><div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 text-light opaque-overlay"><table class="table text-light">
+    <div class="container"><div class="row"><div class="col-lg-12"><div class="row"><div class="col-lg-12"><div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 opaque-overlay"><h1 class="text-center text-light">现场设备信息表</h1></div>
+        <div class="col-lg-2"></div>
+    </div></div></div><div class="row"><div class="col-lg-12"><div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 text-light opaque-overlay"><table class="table text-light">
             <%
                 Statement statement = null;
                 ResultSet resultSet = null;
@@ -77,7 +77,7 @@
             %>
             </tbody>
         </table></div>
-        <div class="col-md-2"></div>
+        <div class="col-lg-2"></div>
     </div></div></div></div></div></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

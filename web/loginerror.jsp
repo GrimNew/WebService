@@ -18,14 +18,14 @@
 <body class="">
 
 <div class="border border-light h-100 py-5 opaque-overlay" style="background-image: url(image/backgroundImage.jpg);">
-    <div class="container"><div class="row"><div class="col-md-12"><div class="row">
-        <div class="col-md-3" style=""></div>
-        <div class="col-md-6" style=""><div class="alert opaque-overlay" role="alert" style="top: 256px">
+    <div class="container"><div class="row"><div class="col-lg-12"><div class="row">
+        <div class="col-lg-3" style=""></div>
+        <div class="col-lg-6" style=""><div class="alert opaque-overlay" role="alert" style="top: 256px">
 
             <h4 class="alert-heading text-center text-light">账号或密码错误，请重新登录！<br><br><small>3秒后自动跳转...</small></h4>
 
         </div></div>
-        <div class="col-md-3" style=""></div>
+        <div class="col-lg-3" style=""></div>
     </div></div></div></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -13,27 +13,43 @@
     <link rel="stylesheet" href="css/theme.css" type="text/css">
     <title>现场监控设备传输服务系统 - 登录</title>
 </head>
+<style>
+    body{
+        /* 加载背景图 */
+        background-image: url(image/backgroundImage.jpg);
+
+        /* 背景图垂直、水平均居中 */
+        background-position: center center;
+
+        /* 背景图不平铺 */
+        background-repeat: no-repeat;
+
+        /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+        background-attachment: fixed;
+
+        /* 让背景图基于容器大小伸缩 */
+        background-size: cover;
+    }
+</style>>
 <body class="">
-<div class="py-5 border border-light h-100 mx-auto" style="background-image: url(image/backgroundImage.jpg);">
+<div class="py-5  h-100 mx-auto" style="">
     <div class="container">
         <div class="row h-75">
-            <div class="align-self-center col-md-6 text-white">
-                <h1 class="text-center text-md-left display-3">现场监控设备<br>&nbsp; &nbsp; &nbsp;传输服务系统</h1>
+            <div class="align-self-center col-lg-7 text-white" style="margin: 0 auto;">
+                <h1 class="text-center text-lg-left display-3" style="text-indent:-1.5em;margin-left: 1.5em">现场监控设备<br><small>传输服务系统</small></h1>
                 <p class="lead"><br>Transmission and Service System Based on Feild Monitoring Equipments<br>Power by Pingendo 4 Based on Bootstrap 4.0<br>Created by Grim in 2017/12/05</p>
             </div>
-            <div class="col-md-6 h-100" id="book" style="left: 10%; top: 20%;">
-                <div class="" style="">
-                    <div class="card-body opaque-overlay text-light p-5 m-5">
-                        <h3 class="pb-3">登录</h3>
-                        <form action="logincheck.jsp" method="post">
-                            <div class="form-group"> <label>账  号</label>
-                                <input type="text" class="form-control" name="username" placeholder="请输入账号"> </div>
-                            <div class="form-group"> <label>密  码</label>
-                                <input type="password" class="form-control" name="password" placeholder="请输入密码"> </div>
+            <div class="col-lg-5 h-100" id="book" style="top: 20%;margin: 0 auto;">
+                <div class="card-body opaque-overlay text-light p-5 m-5">
+                    <h3 class="pb-3">登录</h3>
+                    <form action="logincheck.jsp" method="post">
+                        <div class="form-group"> <label>账  号</label>
+                            <input type="text" class="form-control" name="username" placeholder="请输入账号"> </div>
+                        <div class="form-group"> <label>密  码</label>
+                            <input type="password" class="form-control" name="password" placeholder="请输入密码"> </div>
 
-                            <button type="submit" class="btn mt-2 btn-block btn-outline-light">登  录</button>
-                        </form>
-                    </div>
+                        <button type="submit" class="btn mt-2 btn-block btn-outline-light">登  录</button>
+                    </form>
                 </div>
             </div>
         </div>
