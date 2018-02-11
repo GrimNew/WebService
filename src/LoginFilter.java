@@ -23,7 +23,7 @@ public class LoginFilter implements javax.servlet.Filter {
             httpServletResponse.sendRedirect(httpServletRequest.getContextPath()+"/login.jsp");
         }
     }
-    public void init(FilterConfig filterConfig ) throws ServletException{
+    public void init(FilterConfig filterConfig ) {
 
     }
 

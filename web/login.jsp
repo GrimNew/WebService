@@ -16,16 +16,10 @@
 <style>
     body{
         /* 加载背景图 */
-        background-image: url(image/backgroundImage.jpg);
-
         /* 背景图垂直、水平均居中 */
-        background-position: center center;
-
         /* 背景图不平铺 */
-        background-repeat: no-repeat;
-
         /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
-        background-attachment: fixed;
+        background: url(image/backgroundImage.jpg) no-repeat fixed center center;
 
         /* 让背景图基于容器大小伸缩 */
         background-size: cover;
